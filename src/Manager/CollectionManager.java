@@ -61,6 +61,7 @@ public class CollectionManager {
                     products.add(p);
                 }
                 catch (Exception e) {
+                    e.printStackTrace();
                     //e.printStackTrace();
                 }}
             sort();
@@ -69,15 +70,15 @@ public class CollectionManager {
             System.exit(1);
         }
 
-        if(products.isEmpty()){
-            System.out.println("Коллекция пуста, хотите продолжить работу без коллекции?(yes - продолжить)");
-            Scanner scanne = new Scanner(System.in);
-            String input = scanne.nextLine();
-            if(!(input.equals("yes"))){
-                System.exit(1);}
-            System.out.println("Хорошо, можете продолжать работу с пустой коллекцией");
-
-        }
+//        if(products.isEmpty()){
+//            System.out.println("Коллекция пуста, хотите продолжить работу без коллекции?(yes - продолжить)");
+//            Scanner scanne = new Scanner(System.in);
+//            String input = scanne.nextLine();
+//            if(!(input.equals("yes"))){
+//                System.exit(1);}
+//            System.out.println("Хорошо, можете продолжать работу с пустой коллекцией");
+//
+//        }
     }
 
     public static HashMap<String, String> getColorMap() {
@@ -87,7 +88,7 @@ public class CollectionManager {
 
     /** сортировка элементов коллекции по id*/
     public void sort(){
-        Sort.sort(products);
+        //Sort.sort(products);
     }
     /**переопределение метода to String*/
     @Override

@@ -43,7 +43,7 @@ public class RemoveID extends Command{
             }
             linkedHashSet=CollectionManager.getProducts();
             message = "SuccessfulRemoved";
-            Sort.sort(CollectionManager.getProducts());
+            //Sort.sort(CollectionManager.getProducts());
             //Save.save(collection.getProducts());
             return;
         }

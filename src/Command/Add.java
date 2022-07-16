@@ -58,7 +58,7 @@ public class Add extends Command {
             preparedStatement.execute();
 
             CollectionManager.getProducts().add(product);
-            Sort.sort(CollectionManager.getProducts());
+            //Sort.sort(CollectionManager.getProducts());
             //linkedHashSet=collection.getProducts();
             linkedHashSet=CollectionManager.getProducts();
             this.message="SuccessfulAdded";

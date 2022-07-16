@@ -61,7 +61,7 @@ public class UpdateID extends Command{
         }
 
         linkedHashSet=CollectionManager.getProducts();
-        Sort.sort(CollectionManager.getProducts());
+        //Sort.sort(CollectionManager.getProducts());
         //Save.save(collection.getProducts());
     }
 

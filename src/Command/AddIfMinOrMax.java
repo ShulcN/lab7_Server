@@ -26,7 +26,7 @@ public class AddIfMinOrMax extends Command{
                 Add add = new Add(product);
                 add.DoCommand(collection);
                 message="SuccessfulAdded";
-                Sort.sort(CollectionManager.getProducts());
+                //Sort.sort(CollectionManager.getProducts());
                 //linkedHashSet=collection.getProducts();
             } else {
                 //linkedHashSet=collection.getProducts();
@@ -38,7 +38,7 @@ public class AddIfMinOrMax extends Command{
                 Add add = new Add(product);
                 add.DoCommand(collection);
                 message = "SuccessfulAdded";
-                Sort.sort(CollectionManager.getProducts());
+                //Sort.sort(CollectionManager.getProducts());
                 //linkedHashSet=collection.getProducts();
             } else {
                 //linkedHashSet=collection.getProducts();
