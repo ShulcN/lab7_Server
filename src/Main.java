@@ -7,7 +7,7 @@ import java.io.*;
 public class Main {
     public static void main(String args[]) {
         try (Connection conn = DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5432/products", "postgres", "310121")) {
+                "jdbc:postgresql://localhost:5432/products", "Postgres", "postgres")) {
             //CollectionManager collectionManager = new CollectionManager();
             if (conn != null) {
                 System.out.println("Connected to the database!");
