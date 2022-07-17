@@ -1,0 +1,19 @@
+-- Table: public.users_2
+
+-- DROP TABLE IF EXISTS public.users_2;
+
+CREATE TABLE IF NOT EXISTS public.users_2
+(
+    login character varying COLLATE pg_catalog."default" NOT NULL,
+    password character varying COLLATE pg_catalog."default" NOT NULL,
+    color character varying COLLATE pg_catalog."default" NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL,
+    nationality country NOT NULL,
+    weight double precision,
+    salt character varying COLLATE pg_catalog."default" NOT NULL
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.users_2
+    OWNER to postgres;
