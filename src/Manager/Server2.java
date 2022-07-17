@@ -1,10 +1,12 @@
 package Manager;
 
+import java.io.Console;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -13,9 +15,35 @@ public class Server2 {
     public static void main(String[] args) {
         CollectionManager collectionManager;
         try {
-            LocalDataBaseManager databaseManager = new LocalDataBaseManager( "jdbc:postgresql://localhost:5432/products", "postgres", "310121");
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Ваша база данных локальная?(y/n)");
+            String s = scanner.next();
+            if (s.equals("y")){
+            System.out.println("Введите название базы данных:");
+            String adr = scanner.next();
+            System.out.println("Введите пользователя:");
+            String log = scanner.next();
+            System.out.println("Введите пароль:");
+            String password =  scanner.next();
+            LocalDataBaseManager databaseManager = new LocalDataBaseManager("jdbc:postgresql://localhost:5432/"+adr, log, password);
             collectionManager=new CollectionManager(databaseManager);
-            System.out.println("Включено");
+            } else if (s.equals("n")){
+                System.out.println("Введите адрес сервера:");
+                String adr = scanner.next();
+                System.out.println("Введите порт подключения к серверу:");
+                String port = scanner.next();
+                System.out.println("Введите имя хоста:");
+                String hostName =  scanner.next();
+                System.out.println("Введите название базы данных:");
+                String databaseName = scanner.next();
+                System.out.println("Введите пользователя:");
+                String log = scanner.next();
+                System.out.println("Введите пароль:");
+                String password =  scanner.next();
+                DatabaseManager databaseManager = new DatabaseManager(adr, Integer.parseInt(port), hostName, databaseName, log, password);
+                collectionManager = new CollectionManager(databaseManager);
+            } else return;
+            System.out.println("Collection is ready!");
             ServerSocket server = new ServerSocket(444);
             ExecutorService service = Executors.newFixedThreadPool(10);
             while (true){
