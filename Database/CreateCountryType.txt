@@ -1,0 +1,9 @@
+-- Type: country
+
+-- DROP TYPE IF EXISTS public.country;
+
+CREATE TYPE public.country AS ENUM
+    ('CHINA', 'GERMANY', 'INDIA', 'NORTH_KOREA');
+
+ALTER TYPE public.country
+    OWNER TO postgres;

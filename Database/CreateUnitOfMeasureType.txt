@@ -1,0 +1,9 @@
+-- Type: unit_of_measure
+
+-- DROP TYPE IF EXISTS public.unit_of_measure;
+
+CREATE TYPE public.unit_of_measure AS ENUM
+    ('METERS', 'CENTIMETERS', 'GRAMS', 'MILLIGRAMS');
+
+ALTER TYPE public.unit_of_measure
+    OWNER TO postgres;

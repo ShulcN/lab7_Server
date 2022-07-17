@@ -1,0 +1,12 @@
+-- Type: coordinates
+
+-- DROP TYPE IF EXISTS public.coordinates;
+
+CREATE TYPE public.coordinates AS
+(
+	x integer,
+	y double precision
+);
+
+ALTER TYPE public.coordinates
+    OWNER TO postgres;

@@ -1,0 +1,21 @@
+-- Table: public.product_2
+
+-- DROP TABLE IF EXISTS public.product_2;
+
+CREATE TABLE IF NOT EXISTS public.product_2
+(
+    id bigint NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL,
+    coordinates coordinates NOT NULL,
+    creation_date date NOT NULL,
+    price double precision NOT NULL,
+    unit_of_measure unit_of_measure NOT NULL,
+    owner character varying COLLATE pg_catalog."default" NOT NULL,
+    type character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT product_2_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.product_2
+    OWNER to postgres;
